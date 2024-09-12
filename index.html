@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <title>Secret Message &#128513;</title>
+    <style>
+      .row {
+        margin-top: 25vh;
+      }
+      h1 {
+        margin-top: 0;
+        display: inline-block;
+        text-wrap: wrap;
+      }
+      .heading-1 {
+        font-size: 2.5rem;
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: 0.15em solid orange; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: 0.15em; /* Adjust as needed */
+        animation: typing 5.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      /* The typing effect */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      /* The typewriter cursor effect */
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: orange;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div id="message-show" class="card-panel hide">
+          <div style="display: inline-block">
+            <h1></h1>
+          </div>
+          <div>
+            <a href="./index.html">Create Your Own Message</a>
+          </div>
+        </div>
+        <div id="message-form" class="card-panel">
+          <form action="#">
+            <label>Enter a Secret Message</label>
+            <input type="text" id="message-input" autofocus />
+            <button class="btn">Create</button>
+          </form>
+        </div>
+        <div id="link-form" class="card-panel hide">
+          <div>
+            Share this link with the friend
+            <input id="link-input" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
